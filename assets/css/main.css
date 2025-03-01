@@ -3979,7 +3979,7 @@ input, select, textarea {
 
 	#main {
 		body { font-family: Calibri, "Times New Roman", serif; }
-		background-color: #ffffff;
+		background-color: #ffffff;!important
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
@@ -4952,5 +4952,52 @@ input, select, textarea {
     }
     .white-paper-embed, .white-paper-text {
         max-width: 100%;
+    }
+}
+
+/* Ensure the main content area is centered and responsive */
+#main {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 72rem; /* Keeps content width reasonable */
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    line-height: 1.8;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%; /* Ensures images scale down on smaller screens */
+    height: auto; /* Keeps aspect ratio */
+    display: block; /* Centers images inside divs */
+    margin: 0 auto; /* Ensures images stay centered */
+}
+
+/* Responsive grid for experience section */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-6 {
+    flex: 1 1 45%; /* Two items per row on larger screens */
+    max-width: 45%;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Mobile responsiveness: Stack items vertically on smaller screens */
+@media screen and (max-width: 768px) {
+    .col-6 {
+        flex: 1 1 100%; /* Each item takes full width on mobile */
+        max-width: 100%;
+    }
+
+    #main {
+        width: 95%; /* Adjust main container for better mobile fit */
+        padding: 1rem;
     }
 }
